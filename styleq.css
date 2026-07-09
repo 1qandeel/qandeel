@@ -319,6 +319,12 @@ header {
     margin-bottom: 20px;
 }
 
+/* الكود يستهدف الكلاس الجديد الخاص بالرائدة فقط */
+.winner-img-rowad {
+    transform: translateY(7px) !important;
+    object-position: bottom center !important;
+}
+
 .progress-bar-fill {
     background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
     height: 100%;
