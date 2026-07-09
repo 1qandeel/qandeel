@@ -602,7 +602,7 @@ footer {
 /* =======================================================
    8. شاشات العرض التفاعلية المتوسطة (Tablets)
    ======================================================= */
-@media (max-width: 992px) {
+@media (max-width: 940px) {
     .dashboard-grid { grid-template-columns: 1fr; gap: 30px; }
     .stars-categories-grid { grid-template-columns: 1fr; }
     .about-grid { grid-template-columns: 1fr; gap: 30px; }
@@ -612,10 +612,10 @@ footer {
 /* =======================================================
    9. شاشات الجوال المخصصة والآيفون والتجاوب الذكي للـ Hero
    ======================================================= */
-@media (max-width: 768px) {
+@media (max-width: 440px) {
     .hero-section {
-        padding-top: 50px !important; /* مسافة أمان مضافة بالتزامن مع البادنج الإجمالي للـ body */
-        padding-bottom: 40px;
+        padding-top: 10px !important; /* مسافة أمان مضافة بالتزامن مع البادنج الإجمالي للـ body */
+        padding-bottom: 30px;
     }
 
     .hero-container {
