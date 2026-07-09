@@ -253,9 +253,9 @@ header {
 }
 
 .stat-icon .quran-custom-icon {
-    width: 55px;         /* ارفعي القيمة هنا حتى يتناسق حجمها بالنظر مع الباقيين */
-    height: 60px;        /* تثبيت الارتفاع ليتطابق مع الـ font-size الخاص بالأيقونات */
-    object-fit: contain; /* يحافظ على أبعاد المصحف بدون تمطيط */
+    width: 55px;
+    height: 60px;
+    object-fit: contain;
     display: inline-block;
     vertical-align: middle;
 }
@@ -618,11 +618,15 @@ footer {
 }
 
 /* =======================================================
-   9. شاشات الجوال المخصصة والآيفون والتجاوب الذكي للـ Hero
+   9. شاشات الجوال المخصصة والآيفون والتجاوب الذكي الموحد
    ======================================================= */
 @media (max-width: 440px) {
+    body {
+        padding-top: 195px !important; /* مسافة تعويضية موزونة لحماية الهيدر في الجوال لمنع اختفاء الترحيب */
+    }
+
     .hero-section {
-        padding-top: 40px !important; /* مسافة أمان مضافة بالتزامن مع البادنج الإجمالي للـ body */
+        padding-top: 15px !important; /* تقليل المسافة العلوية لتبدأ الفقرة مباشرة تحت الهيدر المفتوح */
         padding-bottom: 35px;
     }
 
@@ -636,12 +640,6 @@ footer {
     .hero-main-text { font-size: 1.25rem; }
     .hero-sub-text { font-size: 1.05rem; }
     .hero-vision-text { font-size: 0.9rem; line-height: 1.7; }
-}
-
-@media (max-width: 440px) {
-    body {
-        padding-top: 250px !important; /* مسافة تعويضية مطورة ومحكمة للآيفون لحماية الهيدر الممتد */
-    }
 
     /* ضمان ثبات الهيدر العمودي في الجوال */
     .navbar {
