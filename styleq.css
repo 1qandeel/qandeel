@@ -252,6 +252,14 @@ header {
     font-weight: 700;
 }
 
+.stat-icon .quran-custom-icon {
+    width: 55px;         /* ارفعي القيمة هنا حتى يتناسق حجمها بالنظر مع الباقيين */
+    height: 60px;        /* تثبيت الارتفاع ليتطابق مع الـ font-size الخاص بالأيقونات */
+    object-fit: contain; /* يحافظ على أبعاد المصحف بدون تمطيط */
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .section-title-box p {
     color: #666;
     font-size: 0.95rem;
