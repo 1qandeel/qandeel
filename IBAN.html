@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> كُـــن مضيـئًــا </title>
+    <!-- استدعاء خط Cairo المعتمد -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- مكتبة الأيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styleq.css">
+
+
+
+
+    <!-- تنسيقات مخصصة لصفحة الآيبان لتبدو كلوحة مستقلة فخمة متناسقة مع ألوان المبادرة -->
+    <style>
+        .iban-page-wrapper {
+            padding: 80px 20px;
+            background-color: #fcfbfa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+        }
+        .iban-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+            max-width: 550px;
+            width: 100%;
+            text-align: center;
+            border: 1px solid #f0ece6;
+        }
+        .iban-card .card-icon {
+            font-size: 3.5rem;
+            color: #bfa37a; /* اللون الذهبي الخاص بقنديل */
+            margin-bottom: 20px;
+        }
+        .iban-card h2 {
+            font-size: 1.8rem;
+            color: #1a4331; /* الأخضر الملكي للمبادرة */
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .iban-card .bank-name {
+            font-size: 1.2rem;
+            color: #444;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        .account-holder-info {
+            background-color: #f7f5f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-right: 4px solid #bfa37a;
+            text-align: right;
+        }
+        .account-holder-info span {
+            font-size: 0.85rem;
+            color: #777;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .account-holder-info strong {
+            color: #1a4331;
+            font-size: 1.15rem;
+        }
+        .iban-display-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fdfdfd;
+            border: 2px dashed #bfa37a;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            gap: 15px;
+        }
+        .iban-num {
+            font-family: monospace;
+            font-size: 1.15rem;
+            color: #333;
+            letter-spacing: 1px;
+            font-weight: bold;
+            user-select: all;
+            direction: ltr;
+        }
+        .iban-copy-btn {
+            background-color: #bfa37a;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        .iban-copy-btn:hover {
+            background-color: #1a4331;
+        }
+        .blessing-text {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container navbar">
+        <div class="nav-logo-row">
+            <a href="index.html#hero">
+                <img src="شفاف%20%20قنديل.png" alt="شعار مصياف قنديل" class="nav-logo">
+            </a>
+        </div>
+
+        <div class="nav-links-row">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" title="الرئيسية"> الرئيسيـة </a></li>
+                    <li><a href="index.html#stats">قنديل في أرقام</a></li>
+                    <li><a href="all.html">قنـاديــل مصيـاف</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="nav-bottom-row">
+            <a href="IBAN.html" class="nav-support-btn active">
+                كُـــن مــضــيـئًـا <i class="fa-solid fa-hand-holding-heart"></i>
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- محتوى صفحة الآيبان المستقلة الفخمة -->
+<main class="iban-page-wrapper">
+    <div class="iban-card">
+        <div class="card-icon">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+        </div>
+        <h2>كُــــن مضـيـئًـــا</h2>
+        <div class="bank-name">مصرف الراجحي</div>
+
+        <!-- معلومات الاسم الكريم للموثوقية -->
+        <div class="account-holder-info">
+            <span>باسم المستفيد:</span>
+            <strong>شيخه سعد مبارك القحطاني</strong>
+        </div>
+
+        <!-- صندوق عرض رقم الآيبان والنسخ -->
+        <div class="iban-display-box">
+            <span id="pageIbanText" class="iban-num">SA83 8000 0513 6080 1607 5277</span>
+            <button class="iban-copy-btn" onclick="copyPageIBAN()" id="pageCopyBtn">
+                <i class="fa-regular fa-copy"></i> نسخ الآيبان
+            </button>
+        </div>
+
+        <p class="blessing-text">جزاك الله خيـرًا ونفع الله بك .. بدعمكم تضيء شعلة قنـديلـنـا 💛</p>
+    </div>
+</main>
+
+<footer>
+    <div class="container footer-container">
+        <div class="footer-socials">
+            <a href="https://wa.me/966579517751" target="_blank" title="واتساب المبادرة" class="footer-icon-link">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="mailto:info@qandeel.com" title="البريد الإلكتروني" class="footer-icon-link">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="https://chat.whatsapp.com/KPNoigsbJTEI9pqOmeyUr5" target="_blank" title="القروب العام" class="footer-icon-link join-icon">
+                <i class="fa-solid fa-user-plus"></i> <span class="icon-text">انضم للقروب العام</span>
+            </a>
+        </div>
+
+        <div class="footer-rights">
+            <p>جميع الحقوق محفوظة لقنـديل © 2026</p>
+        </div>
+    </div>
+</footer>
+
+<!-- كود الجافا سكريبت مدمج ومباشر هنا لضمان عمل زر النسخ بكفاءة مذهلة دون أي تداخل -->
+<script>
+function copyPageIBAN() {
+    // الرقم المصفى الجاهز للنسخ في حافظة الجهاز الفورية
+    const pureIban = "SA8380000513608016075277";
+
+    navigator.clipboard.writeText(pureIban).then(() => {
+        const btn = document.getElementById("pageCopyBtn");
+        if (btn) {
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> تم النسخ!';
+            btn.style.backgroundColor = "#28a745"; // تحويل اللون للأخضر الناجح
+
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa-regular fa-copy"></i> نسخ الآيبان';
+                btn.style.backgroundColor = "#bfa37a"; // إعادة اللون الذهبي الأصلي
+            }, 2000);
+        }
+    }).catch(err => {
+        console.error('تعذر نسخ الرقم برمجياً: ', err);
+    });
+}
+</script>
+
+</body>
+</html>

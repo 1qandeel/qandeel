@@ -1,0 +1,275 @@
+
+.categories-gateway-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.page-main-title p {
+    color: #666;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+.categories-buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+    gap: 25px;
+    max-width: 800px;
+    margin: 40px auto 0 auto;
+}
+
+/* تصميم الزر المربع كبطاقة تفاعلية */
+.category-btn-card {
+    background: var(--white);
+    border: 2px solid #e3eae5;
+    border-radius: 20px;
+    padding: 35px 20px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+.category-btn-card .btn-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.category-btn-card h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.category-btn-card .btn-action-text {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* تأثير عند تمرير الماوس */
+.category-btn-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 25px rgba(42, 86, 71, 0.08);
+    background-color: var(--light-bg);
+}
+
+/* توافقية الشاشات الصغيرة جداً للجوال */
+@media (max-width: 580px) {
+    .categories-buttons-grid {
+        grid-template-columns: 1fr; /* الزر تحت الآخر في الجوال لسهولة الضغط */
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    .category-btn-card {
+        padding: 25px 15px;
+    }
+}
+
+
+.participants-section {
+    padding: 40px 0;
+}
+
+.page-main-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.page-main-title h2 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    font-weight: 900;
+}
+
+.active-link {
+    color: var(--accent-color) !important;
+}
+
+/* حاوية الفئة الكبيرة */
+.category-group-box {
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.03);
+    border-top: 5px solid var(--primary-color);
+}
+
+.category-header {
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 2px dashed rgba(42, 86, 71, 0.1);
+    padding-bottom: 15px;
+}
+
+.category-title {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+
+/* بوكس أسماء المشرفات */
+.supervisors-box {
+    background-color: var(--light-bg);
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.supervisors-label {
+    color: var(--accent-color);
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+.supervisor-names {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* توزيع كروت المشاركين بشكل شبكة مرنة */
+.participants-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* كرت المشارك الفردي */
+.participant-card {
+    background: var(--light-bg);
+    border-radius: 15px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #e3eae5;
+    transition: var(--transition);
+}
+
+.participant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(42, 86, 71, 0.08);
+    border-color: var(--accent-color);
+}
+
+/* الدائرة المخصصة لصورة المشارك */
+.participant-avatar-box {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-color);
+    overflow: hidden;
+    margin-bottom: 15px;
+    background-color: #e0e0e0; /* خلفية رمادية مؤقتة تظهر قبل وضع الصورة */
+}
+
+.participant-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.participant-name {
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* =======================================================
+   توافقية شاشات الجوال والآيفون
+   ======================================================= */
+@media (max-width: 440px) {
+    .page-main-title h2 {
+        font-size: 1.6rem;
+    }
+
+    .category-title {
+        font-size: 1.4rem;
+    }
+
+    .supervisors-box {
+        flex-direction: column;
+        align-items: start;
+        gap: 6px;
+        padding: 12px;
+    }
+
+    /* عرض كرتين بجانب بعض بشكل مرتب جداً في الجوال بدلاً من كرت واحد طويل */
+    .participants-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .participant-card {
+        padding: 12px 8px;
+    }
+
+    .participant-avatar-box {
+        width: 75px;
+        height: 75px;
+        margin-bottom: 10px;
+    }
+
+    .participant-name {
+        font-size: 0.82rem;
+    }
+}
+/* =======================================================
+   تنسيق الصورة المعتمدة لفئة الرواد (بنات)
+   ======================================================= */
+.participant-avatar-box.girl-bg {
+    background-color: #fbf7f2; /* خلفية ناعمة */
+    border: 2px solid #eadecc;
+    border-radius: 50%;
+    width: 85px;
+    height: 85px;
+    margin: 0 auto 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* لقص أطراف الصورة الزائدة وجعلها دائرية */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.girl-avatar-img {
+    width: 80%; /* حجم الصورة متناسق داخل الدائرة */
+    height: 80%;
+    object-fit: contain;
+    /* فلتر سحري يحول لون الصورة الأسود إلى درجة ذهبية فاخرة تناسب النجوم والرواد */
+    filter: invert(74%) sepia(18%) saturate(718%) hue-rotate(354deg) brightness(87%) contrast(85%);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* حركة الأنيميشن عند تمرير الماوس مطابقة للنجوم */
+.participant-card:hover .participant-avatar-box.girl-bg {
+    transform: translateY(-3px);
+    border-color: #bfa37a;
+}
+
+.participant-card:hover .girl-avatar-img {
+    transform: scale(1.05);
+    /* تغميق اللون قليلاً عند الهوفر ليعطي إحساساً بالحيوية */
+    filter: invert(61%) sepia(21%) saturate(615%) hue-rotate(354deg) brightness(83%) contrast(87%);
+}
+
+/* تنسيق خاص لتنزيل صورة الرواد (girl-avatar) لأسفل الدائرة قليلاً */
+.participants-grid .participant-card .participant-img[src="girl-avatar.png"] {
+    object-fit: contain; /* للحفاظ على أبعاد الأيقونة بدون قص */
+    transform: translateY(16px); /* تحريك الصورة لأسفل بمقدار 6 بكسل */
+    width: 95%; /* ضبط الحجم داخل الإطار */
+    height: 85%;
+}

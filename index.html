@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قنديل</title>
+    <!-- استدعاء خط Cairo المعتمد -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- مكتبة الأيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styleq.css">
+</head>
+<body>
+<header>
+    <div class="container navbar">
+        <!-- الشعار في الأعلى ليكون بالوسط تماماً -->
+        <div class="nav-logo-row">
+            <a href="index.html#hero">
+                <img src="شفاف%20%20قنديل.png" alt="شعار مصياف قنديل" class="nav-logo">
+            </a>
+        </div>
+
+        <!-- روابط التنقل تحت الشعار مباشرة -->
+        <div class="nav-links-row">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" title="الرئيسية"> الرئيسيـة </a></li>
+                    <li><a href="index.html#stats">قنديل في أرقام</a></li>
+                    <li><a href="all.html">قنـاديــل مصيـاف</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- 3. زر كن مضيئاً بحجم صغير وملموم في الأسفل -->
+        <div class="nav-bottom-row">
+            <a href="IBAN.html" target="_blank" class="nav-support-btn">
+                كُـــن مــضــيـئًـا <i class="fa-solid fa-hand-holding-heart"></i>
+            </a>
+        </div>
+
+    </div>
+</header>
+<section class="hero-section" id="hero">
+    <div class="container hero-container">
+
+        <h1 class="welcome-title"> <span class="brand-name"></span></h1>
+
+        <div class="hero-intro-content">
+            <h2 class="hero-main-text">في " مصياف قنديل " نصنع صيفًـا مختلفًـا ☀️</h2>
+            <p class="hero-sub-text">هو أكثر من برنامج... هو رحلة حفظ، وتعلّم، وتطوير، وصحبة صالحة.</p>
+            <p class="hero-vision-text">من خلال مصياف قنديل نسعى لتمكين الطالبات بالقرآن والعلم والمهارات، ونغرس فيهم القيم لنخرج قائدات مؤثرات في مجتمعهن.</p>
+        </div>
+
+    </div>
+</section>
+
+    <!-- لوحة التفاعل الرئيسية (المقسمة لعمودين يمين ويسار) -->
+    <section id="main-dashboard" class="dashboard-section">
+        <div class="container dashboard-grid">
+
+            <!-- العمود الأيمن: الحصالة ممتدة بالطول -->
+            <div class="right-column-box">
+                <div class="section-title-box">
+                    <h2><i class="fa-solid fa-piggy-bank"></i> حصالة مصياف قنديل</h2>
+                    <p>اجعـل مـن دعمـك رصيـدًا لا ينفـد!</p>
+                </div>
+                <!-- صورة الحصالة الكبيرة -->
+                <div class="money-box-img-container">
+                    <img src="حصالةقنديل.png" alt="حصالة قنديل الكبيرة" class="money-box-large-img">
+                </div>
+                <!-- عداد الحصالة أسفل الصورة -->
+                <div class="progress-container-box">
+                    <div class="progress-info">
+                        <span>المبلغ الحالي: <strong id="current-amount">400</strong> ر.س</span>
+                        <span>الهدف: <strong>10000</strong> ر.س</span>
+                    </div>
+
+                    <div class="progress-bar-bg">
+                        <div id="progress-fill" class="progress-bar-fill" style="width: 4%;"></div>
+                    </div>
+
+                    <div class="families-legend">
+                        <div class="legend-item">
+                            <span class="color-box" style="background-color: #D2B372;"></span> <span class="family-name">آل عيد (200 ر.س)</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="color-box" style="background-color: #2A5647;"></span> <span class="family-name">آل وصل (200 ر.س)</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="color-box" style="background-color: #72B192;"></span> <span class="family-name">آل مثل (0 ر.س)</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="color-box" style="background-color: #E6CE9A;"></span> <span class="family-name">آل مريط (0 ر.س)</span>
+                        </div>
+                    </div>
+
+                    <p class="motivation-text">💡 بدعمكم تضيء شعلة قنـديل!</p>
+                </div>
+            </div>
+
+            <!-- العمود الأيسر والأوسط: لوحة نجوم الفئات الـ 4 -->
+            <div class="left-column-stars">
+                <div class="section-title-box">
+                    <h2><i class="fa-solid fa-trophy"></i> نجوم الأسبوع المتميزين</h2>
+                    <p>لوحة شرف وتتويج أبطالنا في فئات مصياف قنديل الـ 4</p>
+                </div>
+
+                <div class="stars-categories-grid">
+                    <div class="winner-card card-baraem">
+                        <span class="category-tag">فئة البراعم</span>
+                        <div class="winner-avatar-box">
+                            <img src="winner2.jpg" alt="صورة الفائز" class="winner-img">
+                        </div>
+                        <div class="winner-details">
+                            <h3>البطل / أحمد بن بندر</h3>
+                            <p class="achievement-text">تمتّع بالتميز في حفظ الـ 5 سور الأولى من جزء عمّ.</p>
+                        </div>
+                    </div>
+
+                    <div class="winner-card card-stars">
+                        <span class="category-tag">فئة النجوم</span>
+                        <div class="winner-avatar-box">
+                            <img src="ali.jpg" alt="صورة الفائز" class="winner-img">
+                        </div>
+                        <div class="winner-details">
+                            <h3>البطل / علــي بن جمــل </h3>
+                            <p class="achievement-text">حفظ 15 حديثاً نبوياً قصيراً بطلاقة وإتقان تام.</p>
+                        </div>
+                    </div>
+
+                    <div class="winner-card card-flowers">
+                        <span class="category-tag">فئة الزهور</span>
+                        <div class="winner-avatar-box">
+                            <img src="winner1.jpg" alt="صورة الفائز" class="winner-img">
+                        </div>
+                        <div class="winner-details">
+                            <h3>البطلة / شــادن بنت سعـود </h3>
+                            <p class="achievement-text">قادت مبادرة تحدي 'فرز وإعادة تدوير الألعاب' بنجاح.</p>
+                        </div>
+                    </div>
+
+                    <div class="winner-card card-rowad">
+                        <span class="category-tag">فئة الرواد</span>
+                        <div class="winner-avatar-box">
+                            <img src="eid.jpg" alt="صورة الفائز" class="winner-img">
+                        </div>
+                        <div class="winner-details">
+                            <h3>البطل / عيــد بن فهــد </h3>
+                            <p class="achievement-text">تميز في الالتزام اليومي والانضباط بجميع تحديات البرنامج.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stars-motivation-box">
+                    <p><i class="fas fa-sparkles"></i> مَن أبطال الأسبوع القادم؟ شـدّ حيلك .. لتضيء اسمك في لوحتنـــا ! 🌟</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+<!-- قسم قنديل في أرقام -->
+<section id="stats" class="stats-section">
+    <div class="container">
+        <div class="section-title">
+            <h2><i class="fa-solid fa-chart-line"></i> قنديل في أرقام</h2>
+            <p>حصاد جهود أبطالنا وبطلاتنا الصغار منذ انطلاق البرنامج الصيفي</p>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                <h3>أكثر من <span class="counter" data-target="1000">1000</span></h3>
+                <p>مشترك متميز</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon"><i class="fa-solid fa-book-quran"></i></div>
+                <h3>أكثر من <span class="counter" data-target="150">150</span></h3>
+                <p>سورة محفوظة</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                <h3>أكثر من <span class="counter" data-target="200">200</span></h3>
+                <p>مبادرة اجتماعية</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- الفوتر -->
+<footer>
+    <div class="container footer-container">
+        <div class="footer-socials">
+            <a href="https://wa.me/966579517751" target="_blank" title="واتساب المبادرة" class="footer-icon-link">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/qandeel_fund" target="_blank" title="انستقرام المبادرة" class="footer-icon-link">
+             <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://chat.whatsapp.com/KPNoigsbJTEI9pqOmeyUr5?mode=gi_t" target="_blank" title="القروب العام" class="footer-icon-link join-icon">
+                <i class="fa-solid fa-user-plus"></i> <span class="icon-text">انضم للقروب العام</span>
+            </a>
+        </div>
+
+        <div class="footer-rights">
+            <p>جميع الحقوق محفوظة لقنـديل © 2026</p>
+        </div>
+    </div>
+</footer>
+
+<!-- استدعاء ملف الجافا سكريبت للعدادات وشريط التقدم فقط -->
+<script type="text/javascript" src="./script.js?v=1.2"></script>
+
+</body>
+</html>
