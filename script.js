@@ -1,57 +1,54 @@
-/* ==========================================================
-   الأكواد التفاعلية للموقع (عداد الأرقام والـ Progress للحصالة)
-   ========================================================== */
-<!-- مكتبة تنبيهات تفاعلية فخمة ومناسبة لهوية قنديل -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', function() {
+    const suggestionForm = document.getElementById('suggestionForm');
 
-    // 1. أنيميشن عداد الأرقام (قسم قنديل في أرقام)
-    const counters = document.querySelectorAll('.counter');
-    const speed = 100; // سرعة حركة العداد التنازلية
+    if (suggestionForm) {
+        suggestionForm.addEventListener('submit', function(e) {
+            e.preventDefault();
 
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-            const inc = target / speed;
+            const nameInput = document.getElementById('name').value;
+            const suggestionInput = document.getElementById('suggestion').value;
+            const messageStatus = document.getElementById('messageStatus');
 
-            if (count < target) {
-                counter.innerText = Math.ceil(count + inc);
-                setTimeout(updateCount, 15);
-            } else {
-                counter.innerText = target;
-            }
-        };
+            // إظهار رسالة "جاري الإرسال..." للمخدم
+            messageStatus.textContent = "جاري إرسال اقتراحك المتميز .. ✨";
+            messageStatus.style.color = "#333";
+            messageStatus.style.display = "block";
 
-        // تشغيل العداد فور تحميل الصفحة تلقائياً
-        updateCount();
-    });
-
-    // 2. تحديث شريط تقدم الحصالة تلقائياً بناءً على القيم الحالية والهدف
-    const currentAmountEl = document.getElementById("current-amount");
-    const progressFillEl = document.getElementById("progress-fill");
-
-    if (currentAmountEl && progressFillEl) {
-        const currentAmount = parseFloat(currentAmountEl.innerText);
-        const targetAmount = 6000; // الهدف المالي الثابت للحصالة لتجهيز الحفل
-
-        // حساب النسبة المئوية وتطبيقها على عرض الشريط
-        let percentage = (currentAmount / targetAmount) * 100;
-        if (percentage > 100) percentage = 100; // لضمان عدم خروج الشريط البصري عن حوافه
-
-        progressFillEl.style.width = percentage + "%";
+            // إرسال البيانات إلى سيرفر البايثون المحلي مع تحديد وضع CORS صراحةً
+            fetch('http://127.0.0.1:8000/submit-suggestion', {
+                method: 'POST',
+                mode: 'cors', // تأكيد وضع CORS للالتفاف حول حظر الحماية
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: nameInput,
+                    suggestion: suggestionInput
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.status === 'success') {
+                    messageStatus.textContent = "تم إرسال اقتراحك بنجاح! شكراً لكِ. 📥";
+                    messageStatus.style.color = "#2A5647"; // نستخدم الأخضر الخاص بالهوية للنجاح
+                    suggestionForm.reset(); // تفريغ الحقول بعد النجاح
+                } else {
+                    messageStatus.textContent = "عذراً، حدثت مشكلة أثناء الإرسال. ❌";
+                    messageStatus.style.color = "red";
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                messageStatus.textContent = "لم يتم الاتصال بالسيرفر. تأكدي أن ملف البايثون يعمل! 🔌";
+                messageStatus.style.color = "red";
+            });
+        });
+    } else {
+        console.error('تحذير: لم يتم العثور على النموذج "suggestionForm" في صفحة الـ HTML!');
     }
 });
-
-function welcomeChild() {
-    Swal.fire({
-        title: 'أهلاً بك! ✨',
-        text: 'سعيدين جداً بإنضمامك معنا في مبادرة قنديل',
-        icon: 'success',
-        confirmButtonText: 'شكراً لكم 🤍',
-        confirmButtonColor: '#2A5647', // اللون الأخضر الرسمي لقنديل
-        background: '#ffffff',
-        border: 'none',
-        border_radius: '15px'
-    });
-}
